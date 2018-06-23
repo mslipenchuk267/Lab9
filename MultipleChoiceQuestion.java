@@ -14,4 +14,9 @@ public class MultipleChoiceQuestion extends Question {
 	public void setPossibleAnswer(List<String> userAnswer) {
 		this.possibleAnswer = userAnswer;
 	}
+
+	public List<String> getPossibleAnswer() {
+		return this.possibleAnswer;
+
+	}
 }
