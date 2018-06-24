@@ -1,14 +1,16 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MultipleChoiceQuestion extends Question {
 	List<String> possibleAnswer = new ArrayList<String>();
-
+	
+	
 	public void addAnswer(String userAnswer) {
-		this.getPossibleAnswer.add(userAnswer);
+		this.getPossibleAnswer().add(userAnswer);
 	}
-
+	
 	public void removeAnswer(String userAnswer) {
-		this.getPossibleAnswer.remove(userAnswer);
+		this.getPossibleAnswer().remove(userAnswer);
 	}
 
 	public void setPossibleAnswer(List<String> userAnswer) {
@@ -19,4 +21,5 @@ public class MultipleChoiceQuestion extends Question {
 		return this.possibleAnswer;
 
 	}
+	
 }

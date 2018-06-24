@@ -1,36 +1,15 @@
 public class Question{
 
-
 	protected String questionText;
 	protected int pointsPossible, pointsEarned;
 	protected int difficulty;
 	protected String correctAnswer;
 	protected int answerSpace;
-
-	public String getQuestionText() {
-		return getQuestion;
+	
+	public String toString() {
+		return this.questionText;
 	}
-
-	public int getPointsPossible() {
-		return pointsPossible;
-	}
-
-	public int setPointsEarned() {
-		return pointsEarned;
-	}
-
-	public int getDifficulty() {
-		return difficulty;
-	}
-
-	public String getCorrectAnswer() {
-		return String;
-	}
-
-	public int getAnswerSpace() {
-		return answerSpace;
-	}
-
+	
 	public void setQuestionText(String questionText) {
 		this.questionText = questionText;
 	}
@@ -42,26 +21,41 @@ public class Question{
 	public void setPointsEarned(int pointsEarned) {
 		this.pointsEarned = pointsEarned;
 	}
-
-	public void getDifficulty(int difficulty) {
-		this.difficulty =  difficulty;
+	
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
 	}
-
-	public void getCorrectAnswer(String correctAnswer) {
+	
+	public void setCorrectAnswer(String correctAnswer) {
 		this.correctAnswer = correctAnswer;
 	}
-
-	public void getAnswerSpace(int answerSpace) {
+	
+	public void setAnswerSpace(int answerSpace) {
 		this.answerSpace = answerSpace;
 	}
-
-
-	public String toString() {
-			return this.getQuestion();
+	
+	public String getQuestionText() {
+		return this.questionText;
 	}
 
+	public int getPointsPossible() {
+		return this.pointsPossible;
+	}
+	
+	public int getPointsEarned() {
+		return this.pointsEarned;
+	}
+	
+	public int getDifficulty() {
+		return this.difficulty;
+	}
+	
+	public String getCorrectAnswer() {
+		return this.correctAnswer;
+	}
 
-
-
+	public int getAnswerSpace() {
+		return answerSpace;
+	}
 
 }
