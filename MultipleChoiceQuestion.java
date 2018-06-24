@@ -2,8 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MultipleChoiceQuestion extends Question {
-	List<String> possibleAnswer = new ArrayList<String>();
+	List<String> possibleAnswers = new ArrayList<String>();
 	
+	public String toString() {
+		String answerChoices = "";
+		for (int i=0; i < this.possibleAnswers.size(); i++) {
+			answerChoices += "=" + this.possibleAnswers.get(i) + "\n";
+		}
+		return this.getQuestionText() + answerChoices;
+	}
 	
 	public void addAnswer(String userAnswer) {
 		this.getPossibleAnswer().add(userAnswer);
@@ -14,11 +21,11 @@ public class MultipleChoiceQuestion extends Question {
 	}
 
 	public void setPossibleAnswer(List<String> userAnswer) {
-		this.possibleAnswer = userAnswer;
+		this.possibleAnswers = userAnswer;
 	}
 
 	public List<String> getPossibleAnswer() {
-		return this.possibleAnswer;
+		return this.possibleAnswers;
 
 	}
 	

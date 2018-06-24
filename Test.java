@@ -1,11 +1,16 @@
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class Test {
 	
 	protected List<Question> questions = new ArrayList<Question>();
 	protected int totalPossiblePoints;
-	protected int pointsEarned;
+	protected int totalPointsEarned;
 
 	public void setTotalPossiblePoints() {
 		// Add each question's possible points to totalPossiblePoints via loop
@@ -17,4 +22,34 @@ public class Test {
 	public int getTotalPossiblePoints() {
 		return this.totalPossiblePoints;
 	}
+	
+	public void gradeTest() {
+		// Add each question's points earned to totalPointsEarned via loop
+		for (int i=0; i < this.questions.size(); i++) {
+			this.totalPointsEarned += this.questions.get(i).getPointsEarned();
+		}
+	}
+	
+	public void displayTest() {
+		// Create output string with test header
+		String output = "Name:\nDate:\nSubject:\n\n\n";
+		int questionIndex;
+		// Loop through all questions
+		for (int i=0; i < this.questions.size(); i++) {
+			questionIndex = i + 1; // For output string
+			// Append each question to end of string
+			output += "Question " + questionIndex + ". " +
+					this.questions.get(i).toString() + "\n";
+		}
+		// After Loop
+		JTextArea textArea = new JTextArea(output);
+		JScrollPane scrollPane = new JScrollPane(textArea);  
+		textArea.setLineWrap(true);  
+		textArea.setWrapStyleWord(true); 
+		scrollPane.setPreferredSize( new Dimension( 1000, 750 ) );
+		JOptionPane.showMessageDialog(null, scrollPane, "Test",  
+		                                       JOptionPane.YES_NO_OPTION);
+	}
+	
+	
 }

@@ -1,3 +1,5 @@
 public class FillInTheBlankQuestion extends Question {
-	// No additional props needed
+	public String toString() {
+		return this.questionText + "\n";
+	}
 }

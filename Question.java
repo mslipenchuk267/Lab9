@@ -1,4 +1,4 @@
-public class Question{
+public abstract class Question{
 
 	protected String questionText;
 	protected int pointsPossible, pointsEarned;
@@ -6,9 +6,7 @@ public class Question{
 	protected String correctAnswer;
 	protected int answerSpace;
 	
-	public String toString() {
-		return this.questionText;
-	}
+	public abstract String toString();
 	
 	public void setQuestionText(String questionText) {
 		this.questionText = questionText;

@@ -1,5 +1,5 @@
 public class ObjectiveQuestion extends Question {
-
-	// No additional props needed
-	
+	public String toString() {
+		return this.questionText + "\n";
+	}
 }
