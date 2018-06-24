@@ -7,7 +7,7 @@ public class MultipleChoiceQuestion extends Question {
 	public String toString() {
 		String answerChoices = "";
 		for (int i=0; i < this.possibleAnswers.size(); i++) {
-			answerChoices += "=" + this.possibleAnswers.get(i) + "\n";
+			answerChoices += "-" + this.possibleAnswers.get(i) + "\n";
 		}
 		return this.getQuestionText() + answerChoices;
 	}
