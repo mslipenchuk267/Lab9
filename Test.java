@@ -14,7 +14,13 @@ public class Test {
 	protected List<Question> questions = new ArrayList<Question>();
 	protected int totalPossiblePoints;
 	protected int totalPointsEarned;
-
+	
+	public Test() {/*Default*/}
+	
+	public Test(List<Question> questions) {
+		this.questions = questions;
+	}
+	
 	public void setTotalPossiblePoints() {
 		// Add each question's possible points to totalPossiblePoints via loop
 		for (int i=0; i < this.questions.size(); i++) {
