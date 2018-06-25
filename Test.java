@@ -48,20 +48,18 @@ public class Test {
 		for (int i=0; i < this.questions.size(); i++) {
 			questionIndex = i + 1; // For output string
 			// Append each question to end of string
-			output += "Question " + questionIndex + ". " +
-					this.questions.get(i).toString() + "\n";
+			output += "Question " + questionIndex + ". " + this.questions.get(i).toString();
 		}
 		// Creating scrollable area for test to be displayed
 		JTextArea textArea = new JTextArea(output);
 		JScrollPane scrollPane = new JScrollPane(textArea);  
 		textArea.setLineWrap(true);  
 		textArea.setWrapStyleWord(true); 
-		scrollPane.setPreferredSize( new Dimension( 1000, 750 ) );
-		JOptionPane.showMessageDialog(null, scrollPane, "Test",  
-		                                       JOptionPane.YES_NO_OPTION);
+		scrollPane.setPreferredSize( new Dimension( 750, 750 ) );
+		JOptionPane.showMessageDialog(null, scrollPane, "Test", JOptionPane.OK_OPTION);
 	}
 	
-	public static void generateTest(List<Question> questions, String outputFileName) {
+	public void generateTest(List<Question> questions, String outputFileName) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
 			writer.write("Name:\nDate:\nSubject:\n\n\n");
 			for (int i = 0; i < questions.size(); i++) {

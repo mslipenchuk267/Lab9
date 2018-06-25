@@ -9,7 +9,9 @@ public class TestDriver {
 		Test test1 = new Test(); // Initializing Test
 		List<Integer> numberOfQuestions = getNumberOfQuestions(); // Query user for each # of question type
 		setTestQuestions(numberOfQuestions, test1); // Populating test's question list and question details
-		
+		test1.displayTest();
+		test1.generateTest(test1.questions,"test");
+		test1.generateAnswerKey(test1.questions,"answer key");
 	}
 	
 	public static List<Integer> getNumberOfQuestions() {
@@ -105,8 +107,6 @@ public class TestDriver {
 			}
 			String multipleChoiceCorrectAnswer = 
 					JOptionPane.showInputDialog("Please enter the correct answer:");
-			int multipleChoiceAnswerSpace = 
-					Integer.parseInt(JOptionPane.showInputDialog("Enter the answer space:"));
 			// Get number of possible answers for question
 			int numberOfPossibleAnswers = 
 					Integer.parseInt(JOptionPane.showInputDialog("Enter the amount of possible answers:"));
@@ -126,8 +126,7 @@ public class TestDriver {
 			 */ 
 			MultipleChoiceQuestion newQuestion = 
 					new MultipleChoiceQuestion(multipleChoiceQuestionText,multipleChoiceQuestionPointsPossible,
-							multipleChoiceQuestionDifficulty, multipleChoiceCorrectAnswer, 
-							multipleChoiceAnswerSpace, multipleChoicePossibleAnswers);
+							multipleChoiceQuestionDifficulty, multipleChoiceCorrectAnswer,multipleChoicePossibleAnswers);
 			test.questions.add(newQuestion); // Add question to Test's question list
 		}
 		

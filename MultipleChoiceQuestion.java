@@ -6,14 +6,13 @@ public class MultipleChoiceQuestion extends Question {
 	
 	public MultipleChoiceQuestion() {/*Default*/};
 	
-	public MultipleChoiceQuestion(String questionText, int pointsPossible, int pointsEarned, int difficulty,
-			String correctAnswer, int answerSpace, List<String> possibleAnswers) {
+	public MultipleChoiceQuestion(String questionText, int pointsPossible, int difficulty,
+			String correctAnswer, List<String> possibleAnswers) {
 		this.questionText = questionText;
 		this.pointsPossible = pointsPossible;
 		this.pointsEarned = pointsEarned;
 		this.difficulty = difficulty;
 		this.correctAnswer = correctAnswer;
-		this.answerSpace = answerSpace;
 		this.possibleAnswers = possibleAnswers;
 	}
 	

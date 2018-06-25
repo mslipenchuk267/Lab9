@@ -2,7 +2,7 @@ public class ObjectiveQuestion extends Question {
 	
 	public ObjectiveQuestion() {/*Default*/}
 	
-	public ObjectiveQuestion(String questionText, int pointsPossible, int pointsEarned, int difficulty,
+	public ObjectiveQuestion(String questionText, int pointsPossible, int difficulty,
 			String correctAnswer, int answerSpace) {
 		this.questionText = questionText;
 		this.pointsPossible = pointsPossible;
@@ -13,6 +13,10 @@ public class ObjectiveQuestion extends Question {
 	}
 	
 	public String toString() {
-		return this.questionText + "\n";
+		String space = "";
+		for (int i = 0; i < this.answerSpace; i++) {
+			space += "\n";
+		}
+		return this.questionText + space;
 	}
 }
