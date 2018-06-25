@@ -1,4 +1,7 @@
 import java.awt.Dimension;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +52,31 @@ public class Test {
 		scrollPane.setPreferredSize( new Dimension( 1000, 750 ) );
 		JOptionPane.showMessageDialog(null, scrollPane, "Test",  
 		                                       JOptionPane.YES_NO_OPTION);
+	}
+	
+	public static void generateTest(List<Question> questions, String outputFileName) {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
+			writer.write("Name:\nDate:\nSubject:\n\n\n");
+			for (int i = 0; i < questions.size(); i++) {
+			    writer.write(questions.toString());
+			}
+		    writer.close();
+		} catch (IOException e) {
+		    System.err.println("Error writing test file.");
+		}
+	}
+	
+	public void generateAnswerKey(List<Question> questions, String outputFileName) {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
+			writer.write("Name:\nDate:\nSubject:\n\n\n");
+			for (int i = 0; i < questions.size(); i++) {
+			    writer.write(questions.get(i).getCorrectAnswer());
+			    writer.newLine();
+			}
+		    writer.close();
+		} catch (IOException e) {
+		    System.err.println("Error writing answer key file.");
+		}
 	}
 	
 	
