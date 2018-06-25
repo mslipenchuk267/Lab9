@@ -35,7 +35,8 @@ public class Test {
 	
 	public void displayTest() {
 		// Create output string with test header
-		String output = "Name:\nDate:\nSubject:\n\n\n";
+		String output = "Name:___________________________\nDate:__________\n"
+				+ "Subject:___________________________\n\n\n";
 		int questionIndex;
 		// Loop through all questions
 		for (int i=0; i < this.questions.size(); i++) {
@@ -44,7 +45,7 @@ public class Test {
 			output += "Question " + questionIndex + ". " +
 					this.questions.get(i).toString() + "\n";
 		}
-		// After Loop
+		// Creating scrollable area for test to be displayed
 		JTextArea textArea = new JTextArea(output);
 		JScrollPane scrollPane = new JScrollPane(textArea);  
 		textArea.setLineWrap(true);  
@@ -68,7 +69,7 @@ public class Test {
 	
 	public void generateAnswerKey(List<Question> questions, String outputFileName) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
-			writer.write("Name:\nDate:\nSubject:\n\n\n");
+			writer.write("Test Answer Key\n\n");
 			for (int i = 0; i < questions.size(); i++) {
 			    writer.write(questions.get(i).getCorrectAnswer());
 			    writer.newLine();
