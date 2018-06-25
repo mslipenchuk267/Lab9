@@ -34,10 +34,10 @@ public class TestDriver {
 	public static void setTestQuestions(List<Integer> numberOfQuestions, Test test) {
 		final int OBJECTIVE_INDEX = 0, FILL_IN_THE_BLANK_INDEX = 1, MULTIPLE_CHOICE_INDEX = 2,
 				MIN_DIFFICULTY = 1, MAX_DIFFICULTY = 10;
-		int questionIndex;
+		int questionIndex = 0;
 		// Add all Objective question types to test1's question List
 		for (int i = 0; i < numberOfQuestions.get(OBJECTIVE_INDEX); i++) {
-			questionIndex = i + 1;
+			questionIndex++;
 			// Get all parameters, pass to constructor, add to Test's question List
 			String objectiveQuestionText = JOptionPane.showInputDialog(null, "Enter the question:",
 					"Question " + questionIndex + ": Text", JOptionPane.INFORMATION_MESSAGE);
@@ -75,7 +75,7 @@ public class TestDriver {
 		
 		// Add all Fill in the Blank questions to test1's questions List
 		for (int i = 0; i < numberOfQuestions.get(FILL_IN_THE_BLANK_INDEX); i++) {
-			questionIndex = i + 1;
+			questionIndex++;
 			// Get all parameters, pass to constructor, add to Test's question List
 			String fillInTheBlankQuestionText = JOptionPane.showInputDialog(null, "Enter the question:",
 					"Question " + questionIndex + ": Text", JOptionPane.INFORMATION_MESSAGE);
@@ -111,7 +111,7 @@ public class TestDriver {
 		}
 		// Add multiple choice questions to test's question list
 		for (int i = 0; i < numberOfQuestions.get(MULTIPLE_CHOICE_INDEX); i++) {
-			questionIndex = i + 1;
+			questionIndex++;
 			// Get all parameters, pass to constructor, add to Test's question List
 			String multipleChoiceQuestionText = JOptionPane.showInputDialog(null, "Enter the question:",
 					"Question " + questionIndex + ": Text", JOptionPane.INFORMATION_MESSAGE);
